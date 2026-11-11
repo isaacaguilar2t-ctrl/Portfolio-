@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#091426">
+  <meta name="description" content="Portafolio personal de Edwin Aguilar: desarrollo web, tecnología e innovación.">
+  <title>Edwin Aguilar — Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="background-grid" aria-hidden="true"></div>
+  <div class="background-glow glow-one" aria-hidden="true"></div>
+  <div class="background-glow glow-two" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader" aria-label="Cargando portafolio">
+    <div class="loader-particles" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="loader-emblem" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="presentation"><circle cx="32" cy="32" r="26"></circle><path d="M32 10v35M32 16 19 29h13M32 23l14 11H32M19 48c5-4 9 4 14 0s9 4 14 0"></path><path d="m32 4 2.2 5.1L40 10l-4.3 3.2 1.1 5.4-4.8-2.8-4.8 2.8 1.1-5.4L24 10l5.8-.9z"></path></svg>
+    </div>
+    <div class="loader-mark">E<span>.</span></div>
+    <div class="loader-track"><span id="loaderFill"></span></div>
+    <div class="loader-meta">
+      <span id="loaderStatus">INITIALIZING PERSONAL SYSTEM</span>
+      <span id="loaderPercent">00%</span>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <a class="logo" href="#home" aria-label="Edwin Aguilar - inicio">Edwin Aguilar<i></i></a>
+    <nav class="navigation" id="navigation" aria-label="Navegación principal">
+      <a class="nav-link active" href="#home"><span>01</span> Inicio</a>
+      <a class="nav-link" href="#about"><span>02</span> Sobre mí</a>
+      <a class="nav-link" href="#journey"><span>03</span> Trayectoria</a>
+      <a class="nav-link" href="#projects"><span>04</span> Proyectos</a>
+      <a class="nav-link" href="#skills"><span>05</span> Habilidades</a>
+      <a class="nav-contact" href="#contact">Contáctame <b>↗</b></a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Language selector"><button type="button" class="language-button active" data-lang="es" aria-pressed="true">ES</button><span>/</span><button type="button" class="language-button" data-lang="en" aria-pressed="false">EN</button></div>
+    <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-controls="navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero page-section" id="home">
+      <div class="cinematic-world" aria-hidden="true">
+        <svg viewBox="0 0 1024 640" preserveAspectRatio="xMidYMid slice" role="presentation">
+          <defs>
+            <linearGradient id="worldSky" x2="0" y2="1">
+              <stop stop-color="#070d1d"/>
+              <stop offset=".5" stop-color="#101a34"/>
+              <stop offset=".77" stop-color="#282949"/>
+              <stop offset="1" stop-color="#17283c"/>
+            </linearGradient>
+            <linearGradient id="worldHorizon" x1="0" y1="0" x2="1" y2="0">
+              <stop stop-color="#e45843"/>
+              <stop offset=".35" stop-color="#a44c60"/>
+              <stop offset=".67" stop-color="#4c6886"/>
+              <stop offset="1" stop-color="#31b9c9"/>
+            </linearGradient>
+            <linearGradient id="worldHorizonFade" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="#fff" stop-opacity=".04"/>
+              <stop offset=".7" stop-color="#fff" stop-opacity=".44"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="worldWater" x2="0" y2="1">
+              <stop stop-color="#14263d"/>
+              <stop offset=".3" stop-color="#0b1c31"/>
+              <stop offset="1" stop-color="#07111f"/>
+            </linearGradient>
+            <linearGradient id="worldMountainLight" x2="0" y2="1">
+              <stop stop-color="#8b668a"/>
+              <stop offset="1" stop-color="#42335f"/>
+            </linearGradient>
+            <linearGradient id="worldVolcanoFace" x2="1" y2=".3">
+              <stop stop-color="#4c356a"/>
+              <stop offset=".34" stop-color="#302044"/>
+              <stop offset=".72" stop-color="#1b1636"/>
+              <stop offset="1" stop-color="#100e29"/>
+            </linearGradient>
+            <linearGradient id="worldFire" x2="0" y2="1">
+              <stop stop-color="#fff0a0"/>
+              <stop offset=".42" stop-color="#ff923f"/>
+              <stop offset="1" stop-color="#a43d63"/>
+            </linearGradient>
+            <pattern id="worldDither" width="8" height="8" patternUnits="userSpaceOnUse">
+              <path d="M0 0h2v2H0zm4 4h2v2H4z" fill="#d68bae" opacity=".17"/>
+            </pattern>
+          </defs>
+          <g class="world-layer world-sky" data-world-depth="0.025">
+            <path fill="url(#worldSky)" d="M0 0h1024v640H0z"/>
+            <path fill="url(#worldDither)" opacity=".55" d="M0 0h1024v350H0z"/>
+            <path fill="url(#worldHorizon)" opacity=".34" d="M0 265h1024v104H0z"/>
+            <path fill="url(#worldHorizonFade)" opacity=".78" d="M0 265h1024v104H0z"/>
+            <g class="world-stars" fill="#dce8ff">
+              <path d="M42 54h3v3h-3zm77 73h2v2h-2zm69-48h3v3h-3zm81 28h2v2h-2zm54-72h3v3h-3zm63 99h2v2h-2zm91-50h3v3h-3zm58 79h2v2h-2zm67-105h3v3h-3zm77 75h2v2h-2zm74-52h3v3h-3zm69 93h2v2h-2zm80-101h3v3h-3zm65 64h2v2h-2zm49-91h3v3h-3z"/>
+              <path d="M94 205h11v3H94zm4-4h3v11h-3zm213-61h9v3h-9zm3-3h3v9h-3zm548 38h12v3h-12zm5-5h3v13h-3z"/>
+              <path d="M156 28h2v2h-2zm279 23h2v2h-2zm314 19h2v2h-2zm225 68h2v2h-2zm-857 99h2v2h-2zm446-25h2v2h-2zm339 16h2v2h-2z"/>
+            </g>
+            <g class="world-moon" data-world-depth="0.035">
+              <path fill="#f3c9a0" opacity=".16" d="M263 178h44v8h12v12h8v36h-8v12h-12v8h-36v-8h-12v-12h-8v-36h8v-12h12z"/>
+              <path fill="#ffe5b6" d="M272 182h28v6h10v10h6v28h-6v10h-10v6h-28v-6h-10v-10h-6v-28h6v-10h10z"/>
+              <path fill="#a96e9c" d="M292 182h8v6h10v10h6v28h-6v10h-10v6h-8v-6h8v-6h8v-10h4v-22h-4v-8h-8v-4h-8z"/>
+            </g>
+          </g>
+
+          <g class="world-layer world-clouds world-clouds-far" data-world-depth="0.045" fill="#b18bb2" opacity=".38">
+            <path d="M102 245h18v-6h12v-7h18v7h12v6h15v6h-75zm340-49h14v-5h12v-8h16v6h12v7h16v6h-20v6h-48v-6h-13zm428 33h22v-6h12v-7h18v7h12v6h15v6h-79z"/>
+            <path d="M671 242h13v-5h13v-7h15v5h14v7h17v6h-21v5h-49v-5h-12z"/>
+          </g>
+          <g class="world-layer world-clouds world-clouds-near" data-world-depth="0.075" fill="#765881" opacity=".42">
+            <path d="M387 257h16v-6h12v-8h18v6h13v8h16v7h-20v5h-51v-5h-14zm472-20h19v-7h14v-6h17v7h12v6h18v7h-22v5h-46v-5h-12z"/>
+            <path d="M50 276h21v-6h14v-7h19v7h12v6h18v7H99v5H64v-5H50z"/>
+          </g>
+
+          <g class="world-layer world-mountains-far" data-world-depth="0.055">
+            <path fill="#66517d" d="M0 358h90l48-30 27 12 55-47 41 35 44-16 62 47h73l54-45 33 16 48-38 35 26 40-12 47 29 44-24 42 13 48-35 42 20 48-16 50 31 52-14v108H0z"/>
+            <path fill="#755e8d" opacity=".75" d="M0 373h92l34-22 26 10 54-41 27 26 32-10 48 36h72l51-33 33 10 48-31 34 22 33-9 49 25 43-16 39 15 38-25 46 12 43-27 49 23 40-12 42 19v87H0z"/>
+            <path fill="#8d7193" opacity=".48" d="M45 373h46l29-18 17 10 36-25 28 20 30-8 39 21h49l41-19 25 10 39-23 27 15 32-9 39 20 29-11 38 14 29-15 33 9 37-19 37 18v48H45z"/>
+          </g>
+
+          <g class="world-layer world-water" data-world-depth="0.11">
+            <path fill="url(#worldWater)" d="M0 354h1024v286H0z"/>
+            <path fill="#f4b66d" opacity=".3" d="M0 351h1024v3H0z"/>
+            <path fill="#eaa0c7" opacity=".2" d="M0 357h1024v2H0z"/>
+            <g class="world-waterline world-waterline-far" fill="#8580be" opacity=".62">
+              <path d="M8 373h19v2H8zm35 7h12v2H43zm68-10h25v2h-25zm45 8h18v2h-18zm83-7h13v2h-13zm56 9h26v2h-26zm79-12h19v2h-19zm43 8h11v2h-11zm105-9h22v2h-22zm39 11h17v2h-17zm67-8h21v2h-21zm46 10h13v2h-13zm72-12h28v2h-28zm55 8h17v2h-17zm61-9h24v2h-24zm43 11h15v2h-15z"/>
+              <path d="M0 393h13v2H0zm62 6h22v2H62zm52-9h16v2h-16zm71 8h29v2h-29zm68-10h17v2h-17zm50 7h14v2h-14zm81-8h23v2h-23zm58 11h20v2h-20zm71-8h15v2h-15zm52 7h28v2h-28zm73-10h17v2h-17zm56 9h24v2h-24zm68-6h13v2h-13zm59 8h28v2h-28zm67-12h17v2h-17z"/>
+            </g>
+            <g class="world-waterline world-waterline-near" fill="#7773b7" opacity=".55">
+              <path d="M19 445h34v3H19zm75 22h19v3H94zm49-30h42v3h-42zm75 17h27v3h-27zm68-36h35v3h-35zm66 28h24v3h-24zm92-22h43v3h-43zm74 32h24v3h-24zm63-42h34v3h-34zm79 26h46v3h-46zm82-31h25v3h-25zm43 45h32v3h-32zm69-29h44v3h-44zm71 24h24v3h-24z"/>
+              <path d="M-5 515h27v3H-5zm66 29h43v3H61zm106-22h24v3h-24zm47 42h51v3h-51zm108-29h36v3h-36zm69 40h29v3h-29zm91-33h49v3h-49zm92 35h26v3h-26zm57-29h43v3h-43zm94 38h33v3h-33zm63-42h47v3h-47zm81 33h33v3h-33zm58-26h43v3h-43z"/>
+            </g>
+            <g class="world-reflections">
+              <path fill="#f3c9a0" opacity=".6" d="M252 365h34v2h-34zm-11 7h57v2h-57zm17 8h42v2h-42zm-9 10h52v2h-52zm15 12h33v2h-33z"/>
+              <path fill="#ffd47a" opacity=".55" d="M473 361h29v2h-29zm-17 7h51v2h-51zm28 9h33v2h-33zm-13 9h45v2h-45z"/>
+              <path fill="#eaa0c7" opacity=".36" d="M181 378h20v2h-20zm644-9h27v2h-27zm-36 11h18v2h-18zm165-5h22v2h-22z"/>
+            </g>
+          </g>
+
+          <g class="world-layer world-city" data-world-depth="0.14" fill="#101b2b" stroke="#101b2b" stroke-width="4" shape-rendering="crispEdges">
+            <path d="M544 382v-48h18v-17h11v17h14v48zm46 0v-73h12v-19h9v19h12v73zm39 0v-54h18v-22h13v22h15v54zm47 0v-96h14v-18h10v18h14v96zm42 0v-69h17v-25h10v25h16v69zm46 0v-49h15v-22h11v22h14v49zm44 0v-81h18v-14h9v14h17v81zm47 0v-59h14v-19h11v19h16v59z"/>
+            <path fill="#e2a56d" stroke="none" opacity=".72" d="M555 347h5v5h-5zm17 0h5v5h-5zm35-43h5v6h-5zm18 26h5v5h-5zm26-14h5v5h-5zm42-33h5v6h-5zm17 29h5v5h-5zm38-20h5v5h-5zm20 27h5v5h-5zm38 5h5v5h-5zm50-44h5v5h-5zm20 31h5v5h-5zm41 7h5v5h-5zm18-25h5v5h-5z"/>
+            <path fill="#41bac4" stroke="none" opacity=".8" d="M564 362h5v5h-5zm51-39h5v5h-5zm57 26h5v5h-5zm64-45h5v5h-5zm57 32h5v5h-5zm63-48h5v5h-5zm56 38h5v5h-5z"/>
+          </g>
+          <g class="world-layer world-palms" data-world-depth="0.17" fill="#091522">
+            <path d="M112 385h10l4-60-9-33 10 14 4 18 2-36 7-16-2 23 13-21 17-11-14 16-10 19 24-11 20 1-21 4-25 16-11 68h-10l7-57-14-19 6-7 11 15-2-29-8-17 13 13 6 25z"/>
+            <path d="M918 386h11l-2-71 8-27-10 12-4 20-3-34-8-15 3 23-15-19-17-9 15 15 11 18-25-8-20 3 21 3 26 13 1 77h9l-2-58 15-17-6-7-12 14-1-28 9-16-14 12-7 24z"/>
+          </g>
+
+          <g class="world-layer world-islands" data-world-depth="0.14">
+            <path fill="#302044" d="M0 383h70l18-14 19 8 25-16 25 9 17-11 30 18h73l-24 14H0zm766 3h53l21-13 19 8 19-17 20 13 18-7 24 16h84v14H766z"/>
+            <path fill="#4c356a" d="M0 380h63l20-13 15 9 28-17 19 9 14-8 27 15 29-4 24 12H0zm803 6h51l21-12 16 9 22-18 17 13 14-6 28 17h52v10H803z"/>
+            <path fill="#b36e83" opacity=".45" d="M35 380h35l18-11 13 7 28-16 17 8 14-7 24 13-27 2-17-7-27 14-18-8-18 10H35zm827 4h39l20-15 16 11 22-17 18 12 14-4 20 13h-20l-17-8-17 7-20-10-19 13h-56z"/>
+          </g>
+
+          <g class="world-layer world-volcano" data-world-depth="0.19" transform="translate(-110 0) scale(.93 1)">
+            <path fill="#100e29" d="M178 474h44l18-18 19 4 22-27 18 6 19-33 21 3 22-29 17 4 18-37 18 5 18-49 14 5 13-66 12 18 10-97 11-27 10 26 9 77 13-18 8 66 17-8 11 48 20-2 17 38 18-8 17 37 23-5 22 32 19-5 18 28 25-2 22 30h43l22 28h38l22 27h-66l-15 19H790l-15 18h-79l-18 17h-96l-17 14H486l-20-9h-98l-22-11h-74l-18-15h-55z"/>
+            <path fill="url(#worldVolcanoFace)" d="M207 467h43l20-22 22 5 20-29 18 7 19-38 21 4 20-38 20 4 17-52 17 3 15-79 13 20 12-106 10-25 10 25 8 83 14-15 7 69 17-8 10 49 18-3 15 39 21-7 17 34 24-5 20 31 24-4 17 25h41l18 25h34l18 24H806l-17 15h-82l-16 16h-97l-18 13H485l-18-10h-92l-20-11h-73l-18-13h-47z"/>
+            <path fill="#5c3c6b" opacity=".82" d="M538 78h12l8 89-12 38 20 19-8 32 30 22-13 21 39 35-22 16 47 35-23 16 63 47-37 7-46-27-33-29-24-36-17-33-15-41-13-44-11-46-7-53-5-50 13-71z"/>
+            <path fill="#24183d" d="M502 196h25l-13 37 15 22-19 37 13 32-26 41 14 25-30 35 12 27-27 31h-30l18-31-8-27 20-39-8-30 22-42-9-31 18-39-8-35z"/>
+            <path fill="#76518c" opacity=".62" d="M535 84h8l-1 75 8 31-12 27 10 32-18 28 14 33-23 31 17 28-24 32 9 28-29 28h-18l17-32-8-25 18-36-8-28 18-37-8-32 16-39-7-31 15-41-5-34z"/>
+            <path fill="#100e29" d="M317 402h22l14-17 13 3 14-28 12 4 12-31 17 5 13-27 16 5 15-25 11 7 4 47-16 34-18 21-31 17-28 10-53-4-20-9zm243 12h20l12-16 15 4 13-25 13 4 13-29 13 7 12-22 13 6 11-14 9 36-15 35-26 22-36 11-43-6-21-10z"/>
+            <path fill="#593b68" d="M330 396h20l13-17 12 3 13-27 13 4 13-27 15 4 12-21 17 5 4 25-16 26-21 20-28 13-45-3-18-8zm238 14h17l12-15 15 4 13-24 13 4 13-26 13 5 10-19 15 5 7 20-15 26-24 16-33 8-39-5-17-8z"/>
+            <path fill="#d68bae" opacity=".48" d="M525 80h4v-8h5v-6h8v6h6v8h-7v6h-12v-6zM340 365h9v-6h6v-5h5v7h-5v7h-15zm266 32h8v-5h6v-4h5v7h-6v5h-13z"/>
+            <g class="world-beacons">
+              <g class="world-beacon">
+                <path fill="#28162f" d="M527 62h23v18h-23z"/>
+                <path class="world-flame" fill="url(#worldFire)" d="M531 61h5V51h5V41h5v11h5v9h-5v4h-14z"/>
+                <path fill="#ffd47a" d="M536 53h4v-7h4v9h-8z"/>
+              </g>
+              <g class="world-flame-small">
+                <path fill="#28162f" d="M330 351h17v15h-17z"/>
+                <path class="world-flame" fill="url(#worldFire)" d="M332 350h4v-8h4v-9h5v12h4v6h-4v4h-13z"/>
+              </g>
+              <g class="world-flame-small">
+                <path fill="#28162f" d="M684 353h17v15h-17z"/>
+                <path class="world-flame" fill="url(#worldFire)" d="M686 352h4v-8h4v-9h5v12h4v6h-4v4h-13z"/>
+              </g>
+            </g>
+            <g class="world-smoke" fill="#a16b8c" opacity=".48">
+              <path d="M531 38h7v-8h8v-7h-7v-7h9v-7h8v-7h-11v8h-8v8h-8v8h5v5h-7v7h-8v6h12z"/>
+              <path d="M337 329h6v-7h8v-6h-7v-7h7v-6h8v-6h-11v7h-7v7h-7v8h4v4h-6v6h-7v5h10z"/>
+              <path d="M690 331h7v-6h8v-7h-7v-5h9v-7h7v-6h-10v7h-8v7h-7v7h4v4h-7v6h-6v5h10z"/>
+            </g>
+            <g class="world-lava" fill="none" stroke="#ff744b" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" opacity=".86">
+              <path d="M488 184v31h-12v24l-12 14v29l-14 18v32l-16 20"/>
+              <path d="M578 187v27l13 17v25l20 18v22l29 18v21l34 19"/>
+              <path d="M420 300v18l-16 15v20"/>
+              <path d="M652 322v20l22 17v16"/>
+            </g>
+            <g class="world-lava" fill="none" stroke="#ffd26f" stroke-width="2" stroke-linecap="square" opacity=".9">
+              <path d="M489 188v27h-12v24l-12 14v25l-14 18"/>
+              <path d="M579 191v22l13 17v25l20 18v19"/>
+              <path d="M421 304v14l-16 15"/>
+            </g>
+          </g>
+
+          <g class="world-layer world-foreground" data-world-depth="0.23">
+            <path fill="#0b102b" d="M0 528h52l22-18 14 4 22-28 17 3 18-22 18 5 19-26 18 7 21-25 20 11 15 26-15 21-19 13-16 24-23 4-18 22H0zm1024 2h-51l-20-19-17 4-22-28-18 3-18-22-18 5-18-26-19 7-20-25-20 11-15 26 15 21 19 13 16 24 23 4 18 22h165z"/>
+            <path fill="#172043" d="M0 533h54l19-16 15 4 20-25 17 4 18-20 17 4 17-23 17 5 17-17 15 7 17 23-17 17-19 9-16 20-23 3-18 19H0zm1024 4h-56l-18-17-15 4-20-25-17 4-18-20-18 4-17-23-18 5-16-17-15 7-17 23 17 17 19 9 16 20 23 3 18 19h162z"/>
+          </g>
+          <g class="world-layer world-particles" data-world-depth="0.18" fill="#f6c982">
+            <path d="M135 420h3v3h-3zm227-53h2v2h-2zm388 34h3v3h-3zm-208 70h2v2h-2zm315-95h3v3h-3zm-547 102h2v2h-2zm431 48h3v3h-3z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-topline"><span><i class="live-dot"></i> SYSTEM ONLINE</span><span>PORTFOLIO / 2026</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">ESTUDIANTE · TECH ENTHUSIAST · FUTURE DEVELOPER</p>
+          <h1 class="hero-title">UNA MENTE CURIOSA<br>CON GRANDES <span>IDEAS.</span></h1>
+          <p class="hero-description">Exploro la tecnología para convertir problemas reales en soluciones digitales. Aprendiendo, construyendo y mejorando en cada proyecto.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explorar proyectos <span>↗</span></a>
+            <a class="button button-ghost" href="#about">Conocer más <span>↓</span></a>
+          </div>
+          <div class="hero-index"><span>01 / 06</span><span>SCROLL TO EXPLORE</span><span class="index-line"></span></div>
+        </div>
+        <aside class="hero-aside">
+          <div class="adventure-scene" aria-hidden="true">
+            <svg viewBox="0 0 480 380" role="presentation">
+              <g class="scene-stars" data-parallax="0.13" fill="#dbe7ff">
+                <path d="M37 48h4v4h-4zM86 89h3v3h-3zM145 35h4v4h-4zM211 76h3v3h-3zM285 39h4v4h-4zM355 75h3v3h-3zM431 34h4v4h-4zM56 143h3v3h-3zM184 126h4v4h-4zM334 137h3v3h-3zM414 113h4v4h-4z"/>
+                <path d="M112 58h13v3h-13zM117 53h3v13h-3zM380 111h11v3h-11zM384 107h3v11h-3z"/>
+              </g>
+              <g class="scene-moon" data-parallax="0.08">
+                <path fill="#f3d58b" d="M327 45h28v8h12v12h8v28h-8v12h-12v8h-28v-8h-12V93h-8V65h8V53h12z"/>
+                <path fill="#d7ae5d" d="M343 61h12v8h8v20h-8v8h-20v-8h-8V69h8v-8z"/>
+                <path fill="#f3d58b" d="M346 64h7v7h-7zM326 77h8v8h-8zM352 92h8v6h-8z"/>
+              </g>
+              <g class="scene-ridge" data-parallax="0.04">
+                <path fill="#162844" d="M0 194h53v-16h25v-13h16v12h26v-16h22v-13h13v-11h8v18h19v12h34v18h43v-13h22v-16h16v10h24v-15h20v-10h11v14h20v15h27v-16h22v-12h13v-9h8v18h20v17h16v37H0z"/>
+                <path fill="#203b59" d="M0 216h73v-13h34v-10h22v11h31v-13h30v14h41v-10h26v12h44v-15h28v13h33v-10h29v13h38v-11h31v19h20v35H0z"/>
+              </g>
+              <g class="scene-sea" data-parallax="0.09">
+                <path fill="#102c49" d="M0 238h480v142H0z"/>
+                <path fill="#174267" d="M0 258h30v-5h28v5h33v7H65v5H31v-5H0zm118 13h31v-5h27v5h35v7h-31v5h-35v-5h-27zm154-17h29v-5h27v5h34v7h-31v5h-33v-5h-26zm117 25h30v-5h26v5h35v7h-31v5h-34v-5h-26zM14 320h34v-5h30v5h38v7H80v5H48v-5H14zm170 18h28v-5h31v5h34v7h-31v5h-34v-5h-28zm164-23h34v-5h30v5h36v7h-33v5h-33v-5h-34z"/>
+                <path fill="#2c6682" d="M70 291h18v4H70zm106 22h23v4h-23zm132-39h17v4h-17zm106 56h18v4h-18z"/>
+              </g>
+              <g class="scene-ship" data-parallax="0.16">
+                <path fill="#d6b66f" d="M275 202h112v9h-10v9h-13v8h-62v-8h-15v-9h-12z"/>
+                <path fill="#744f3d" d="M288 195h82v8h-82zm15-11h50v11h-50zm9-8h31v8h-31z"/>
+                <path fill="#d6b66f" d="M326 132h7v58h-7z"/>
+                <path fill="#ecf1df" d="M319 142h-27v38h27zm15 4h35v34h-35z"/>
+                <path fill="#f0d486" d="M300 151h12v10h-12zm44 6h12v10h-12z"/>
+                <path fill="#c4f05b" d="M321 123h17v5h-17z"/>
+              </g>
+              <g class="scene-explorer" data-parallax="0.19">
+                <path fill="#0b172b" d="M88 240h14v-12h9v-20h7v20h9v12h14v48h-8v12h-39v-12h-6z"/>
+                <path fill="#c4f05b" d="M82 220h13v-7h29v7h12v7H82zM88 210h11v-6h20v6h9v6H88z"/>
+                <path fill="#f1d8ae" d="M99 223h19v14H99z"/>
+                <path fill="#e1ae6d" d="M97 238h22v8H97zm-9 12h40v29H88z"/>
+                <path fill="#c4f05b" d="M94 248h8v8h-8zm19 0h8v8h-8z"/>
+                <path fill="#152844" d="M79 286h20v7H79zm30 0h22v7h-22z"/>
+                <path fill="#f1d8ae" d="M103 226h4v4h-4z"/>
+              </g>
+              <path class="scene-ground" fill="#101d32" d="M0 302h44v-8h20v8h38v10h25v-8h25v8h30v-12h20v12h32v-8h26v8h40v-10h19v10h28v-8h22v8h34v-12h20v12h34v-8h20v8h23v68H0z"/>
+            </svg>
+            <span class="scene-caption">A QUIET NIGHT · A NEW HORIZON</span>
+          </div>
+          <div class="profile-card">
+            <div class="profile-image">
+              <div class="profile-fallback" aria-hidden="true"><span>EA</span></div>
+              <img src="Foto.png" alt="Fotografía de Edwin Aguilar" onerror="this.style.display='none'">
+              <span class="image-corner corner-tl"></span><span class="image-corner corner-br"></span>
+            </div>
+            <div class="profile-info"><div><h2>Edwin Aguilar</h2><p>Aspirante a Ingeniería en Sistemas</p></div></div>
+          </div>
+        </aside>
+      </div>
+      <div class="hero-bottom"><span>DESIGNED TO CREATE IMPACT</span><span>SCROLL <b>⌄</b></span></div>
+    </section>
+
+    <div class="marquee" role="img" aria-label="Think, build, learn, repeat"><div class="marquee-track">
+      <div class="marquee-group"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+      <div class="marquee-group" aria-hidden="true"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+      <div class="marquee-group" aria-hidden="true"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+      <div class="marquee-group" aria-hidden="true"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+      <div class="marquee-group" aria-hidden="true"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+      <div class="marquee-group" aria-hidden="true"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+      <div class="marquee-group" aria-hidden="true"><span>THINK</span><b>✳</b><span>BUILD</span><b>✳</b><span>LEARN</span><b>✳</b><span>REPEAT</span><b>✳</b></div>
+    </div></div>
+    <div class="pixel-wave-divider" aria-hidden="true"><svg viewBox="0 0 512 24" preserveAspectRatio="none"><g class="pixel-wave-track"><path d="M0 10h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M0 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/><path d="M512 10h32v-4h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M512 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/></g></svg></div>
+
+    <section class="page-section section about-section" id="about">
+      <div class="section-tag"><span>02</span> / ABOUT ME</div>
+      <div class="section-grid">
+        <div><p class="eyebrow">UN POCO SOBRE MÍ</p><h2 class="section-heading">Una mente curiosa<br>con grandes <span>ideas.</span></h2></div>
+        <div class="about-content reveal">
+          <p class="about-lead">Mi nombre es Edwin Aguilar. Soy estudiante de Bachillerato General en El Salvador y participo en el programa ¡Supérate! ADOC.</p>
+          <p>Mi interés por la tecnología comenzó con la curiosidad por entender cómo funcionan las aplicaciones, los sitios web y los sistemas computacionales. Esa curiosidad se convirtió poco a poco en motivación para aprender programación y desarrollar proyectos propios.</p>
+          <p>Quiero estudiar Ingeniería en Sistemas y seguir creciendo como persona y futuro profesional. Creo que la tecnología es más que escribir código: permite convertir ideas en soluciones que pueden ayudar a otras personas.</p>
+          <div class="about-quote"><span aria-hidden="true">“</span><div><h3>Think it.<br>Build it.<br>Improve it.</h3><p>Every great project begins with an idea.</p></div></div>
+          <div class="about-stats">
+            <div><strong>LOCATION</strong><span>El Salvador</span></div>
+            <div><strong>EDUCATION</strong><span>Bachillerato General</span></div>
+            <div><strong>GOAL</strong><span>Ingeniería en Sistemas</span></div>
+          </div>
+          <a class="button button-ghost cv-link" href="Edwin_Isaac_Aguilar_Pineda_CV.pdf" target="_blank" rel="noopener">Ver currículum <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+    <div class="pixel-wave-divider pixel-wave-divider-alt" aria-hidden="true"><svg viewBox="0 0 512 24" preserveAspectRatio="none"><g class="pixel-wave-track"><path d="M0 10h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M0 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/><path d="M512 10h32v-4h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M512 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/></g></svg></div>
+
+    <section class="page-section section journey-section" id="journey">
+      <div class="section-tag"><span>03</span> / MY JOURNEY</div>
+      <div class="section-heading-row">
+        <div><p class="eyebrow">APRENDER Y CRECER</p><h2 class="section-heading">Mi recorrido<span>.</span></h2></div>
+        <p class="section-side-note">Experiencias académicas, proyectos y aprendizajes que forman parte de mi camino.</p>
+      </div>
+      <div class="timeline reveal">
+        <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><span class="timeline-icon" aria-hidden="true">⌂</span><div><span class="timeline-label">EXPERIENCIA ACADÉMICA</span><h3>Recorrido académico</h3><p>Formación en Bachillerato General y preparación para completar esta etapa académica.</p></div><span class="timeline-state">EN CURSO</span></article>
+        <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><span class="timeline-icon" aria-hidden="true">✦</span><div><span class="timeline-label">CRECIMIENTO PERSONAL</span><h3>Programa ¡Supérate! ADOC</h3><p>Experiencia de formación académica y personal, con aprendizajes y oportunidades de crecimiento.</p></div><span class="timeline-state">EXPERIENCIA</span></article>
+        <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><span class="timeline-icon" aria-hidden="true">A·B</span><div><span class="timeline-label">APRENDIZAJE EN CURSO</span><h3>Inglés y preparación TOEIC</h3><p>Aprendizaje del idioma inglés y preparación relacionada con TOEIC.</p></div><span class="timeline-state">EN DESARROLLO</span></article>
+        <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><span class="timeline-icon" aria-hidden="true">&lt;/&gt;</span><div><span class="timeline-label">APRENDIZAJE EN CURSO</span><h3>Programación y tecnología</h3><p>Desarrollo de conocimientos en programación, informática y herramientas tecnológicas mediante proyectos propios.</p></div><span class="timeline-state">EN CURSO</span></article>
+        <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><span class="timeline-icon" aria-hidden="true">▣</span><div><span class="timeline-label">EXPERIENCIA EN PROYECTOS</span><h3>Desarrollo de proyectos</h3><p>Participación en la creación y desarrollo de proyectos como Parking-SV y Vox Vision.</p></div><span class="timeline-state">EXPERIENCIA</span></article>
+        <article class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><span class="timeline-icon" aria-hidden="true">↗</span><div><span class="timeline-label">CRECIMIENTO PERSONAL</span><h3>Comunicación y expresión oral</h3><p>Presentación de ideas, proyectos y propuestas frente al público.</p></div><span class="timeline-state">EXPERIENCIA</span></article>
+      </div>
+    </section>
+    <div class="pixel-wave-divider" aria-hidden="true"><svg viewBox="0 0 512 24" preserveAspectRatio="none"><g class="pixel-wave-track"><path d="M0 10h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M0 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/><path d="M512 10h32v-4h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M512 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/></g></svg></div>
+
+    <section class="page-section section projects-section" id="projects">
+      <div class="section-tag"><span>04</span> / SELECTED WORK</div>
+      <div class="section-heading-row">
+        <div><p class="eyebrow">IDEAS EN CONSTRUCCIÓN</p><h2 class="section-heading">Proyectos<span>.</span></h2></div>
+        <p class="section-side-note">Cada proyecto representa una oportunidad para aprender, experimentar y crear algo útil.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal" data-project="parking">
+          <div class="project-visual visual-parking"><span class="project-status">PROYECTO</span><div class="project-brand"><img src="Logo Parking .png" alt="Logo de Parking-SV" loading="lazy"></div></div>
+          <div class="project-details"><div class="project-copy"><span class="project-type">01 — MOVILIDAD</span><h3>Parking-SV</h3><p>Plataforma tecnológica para conectar a conductores que buscan estacionamiento con personas que ofrecen espacios disponibles.</p></div><div class="project-actions"><a class="project-link" href="https://parkingsv-web-git-main-parkingsv.vercel.app/" target="_blank" rel="noopener noreferrer">Visitar sitio <span>↗</span></a><a class="project-link project-link-secondary" href="https://github.com/parkingSV26/parkingsv-web" target="_blank" rel="noopener noreferrer">Ver repositorio <span>↗</span></a><button class="project-open" type="button" data-project="parking">Más detalles <span>＋</span></button></div></div>
+        </article>
+        <article class="project-card reveal" data-project="voxvision">
+          <div class="project-visual visual-box"><span class="project-status">PROYECTO</span><div class="project-brand"><img src="Vox Vision.png" alt="Logo de Vox Vision" loading="lazy"></div></div>
+          <div class="project-details"><div class="project-copy"><span class="project-type">02 — TECNOLOGÍA ACCESIBLE</span><h3>Vox Vision</h3><p>Proyecto de asistencia para personas con discapacidad visual: utiliza inteligencia artificial y visión por computadora para reconocer objetos y describir el entorno mediante voz.</p></div><div class="project-actions"><a class="project-link" href="https://fredy-8.github.io/VoxVision/" target="_blank" rel="noopener noreferrer">Visitar sitio <span>↗</span></a><a class="project-link project-link-secondary" href="https://github.com/Fredy-8/VoxVision" target="_blank" rel="noopener noreferrer">Ver repositorio <span>↗</span></a><button class="project-open" type="button" data-project="voxvision">Más detalles <span>＋</span></button></div></div>
+        </article>
+        <article class="project-card project-card-development reveal" data-project="glowp">
+          <div class="project-visual visual-glowp"><span class="project-status project-status-development">EN CONSTRUCCIÓN</span><div class="glowp-concept" role="img" aria-label="Ilustración conceptual de barbería para GlowP; no es un logotipo oficial"><svg viewBox="0 0 160 110" aria-hidden="true"><path class="pole-cap" d="M56 12h48v10H56zM56 88h48v10H56z"/><path class="pole-body" d="M62 22h36v66H62z"/><path class="pole-stripe" d="M62 28h12l-12 15v14l24-35h-12zM86 88h12V73L86 88zM74 88h12l12-15V59zM62 73v14l12-11 24-35V27H86z"/><path class="comb" d="M112 29h31v13h-31zM116 42v23m7-23v23m7-23v23m7-23v23m7-23v23M112 65h31v8h-31z"/><path class="spark" d="M34 33h12m-6-6v12M30 73h9m-4-5v10"/></svg><div class="glowp-brand"><span>G</span><strong>GlowP</strong></div><span class="concept-caption">CONCEPT ART · NOT AN OFFICIAL LOGO</span></div></div>
+          <div class="project-details"><div class="project-copy"><span class="project-type">03 — CUIDADO CAPILAR</span><h3>GlowP</h3><p>Propuesta de plataforma para descubrir productos, recomendaciones de cuidado capilar, estilos y servicios de barbería.</p></div><div class="project-actions"><span class="project-link project-link-pending">Proyecto en desarrollo</span><button class="project-open" type="button" data-project="glowp">Ver propuesta <span>＋</span></button></div></div>
+        </article>
+      </div>
+      <p class="projects-footnote"><span>✳</span> GlowP es una propuesta en desarrollo. Sus características están sujetas a evolución.</p>
+    </section>
+    <div class="pixel-wave-divider pixel-wave-divider-alt" aria-hidden="true"><svg viewBox="0 0 512 24" preserveAspectRatio="none"><g class="pixel-wave-track"><path d="M0 10h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M0 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/><path d="M512 10h32v-4h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32v-5h32V6h32v4h32v5h32" fill="none" stroke="currentColor" stroke-width="4"/><path d="M512 20h64v-4h64v4h64v-4h64v4h64v-4h64v4h64v-4h64v4h64" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/></g></svg></div>
+
+    <section class="page-section section skills-section" id="skills">
+      <div class="section-tag"><span>05</span> / TOOLKIT</div>
+      <div class="section-heading-row"><div><p class="eyebrow">HERRAMIENTAS Y ENFOQUE</p><h2 class="section-heading">Habilidades<span>.</span></h2></div><p class="section-side-note skills-intro">Conocimientos y cualidades que sigo desarrollando a través del aprendizaje y la práctica.</p></div>
+      <div class="skills-groups">
+        <section class="skill-group reveal"><h3 class="skill-group-title"><span>01</span> Hard Skills</h3><div class="skills-list">
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">&lt;/&gt;</span><h4>Web Development</h4><p>HTML, CSS y JavaScript para desarrollar y estructurar sitios web.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">∑</span><h4>Logical Thinking</h4><p>Pensamiento lógico, razonamiento matemático y resolución de problemas.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">{ }</span><h4>Programming</h4><p>Fundamentos de programación y aplicación de la lógica para desarrollar soluciones tecnológicas.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">▦</span><h4>Digital Tools</h4><p>Manejo de Microsoft Office y diferentes herramientas digitales.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">⌘</span><h4>Computer Science</h4><p>Interés y conocimientos en informática, tecnología y sistemas computacionales.</p></article>
+        </div></section>
+        <section class="skill-group reveal"><h3 class="skill-group-title"><span>02</span> Soft Skills</h3><div class="skills-list">
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">↔</span><h4>Teamwork</h4><p>Capacidad para colaborar, compartir ideas y trabajar en equipo.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">✓</span><h4>Responsibility</h4><p>Compromiso con las tareas y responsabilidades académicas y de proyectos.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">↗</span><h4>Adaptability</h4><p>Disposición para aprender y adaptarse a nuevas herramientas y tecnologías.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">◇</span><h4>Problem Solving</h4><p>Capacidad para analizar situaciones y buscar soluciones.</p></article>
+          <article class="skill-card"><span class="skill-icon" aria-hidden="true">↻</span><h4>Continuous Learning</h4><p>Motivación para seguir aprendiendo y mejorar constantemente.</p></article>
+        </div></section>
+      </div>
+      <article class="english-card reveal"><span class="skill-icon" aria-hidden="true">A·B</span><div><span class="project-type">APRENDIZAJE DE IDIOMAS</span><h3>English Language</h3><p>Actualmente desarrollando mis habilidades de inglés, con experiencia de aprendizaje y preparación relacionada con TOEIC.</p></div><span class="english-status">IN PROGRESS</span></article>
+    </section>
+
+    <section class="page-section section contact-section" id="contact">
+      <div class="section-tag"><span>06</span> / CONTACTO</div>
+      <p class="eyebrow">¿TIENES UNA IDEA, PROYECTO U OPORTUNIDAD?</p>
+      <h2 class="contact-title">CONTÁCTAME<span>.</span></h2>
+      <p class="contact-description">Estoy abierto a aprender, colaborar y conectar con personas que compartan el interés por la tecnología y la innovación.</p>
+      <a class="contact-main-link" href="mailto:isaac.aguilar2t@gmail.com?subject=Contacto%20desde%20portafolio">isaac.aguilar2t@gmail.com <span>↗</span></a>
+      <div class="contact-links">
+        <a class="social-card" href="https://github.com/isaacaguilar2t-ctrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Edwin Aguilar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 19.2c-4.1 1.2-4.1-2.1-5.8-2.5m11.6 4v-3.1a2.7 2.7 0 0 0-.8-2.1c2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 17.4 6a4.4 4.4 0 0 0-.1-3.2s-1-.3-3.3 1.2a11.5 11.5 0 0 0-6 0C5.7 2.5 4.7 2.8 4.7 2.8A4.4 4.4 0 0 0 4.6 6a4.7 4.7 0 0 0-1.3 3.4c0 4.7 2.8 5.7 5.5 6a2.7 2.7 0 0 0-.8 2.1v3.2"></path></svg><span>GITHUB</span><strong>Ver repositorios ↗</strong></a>
+        <a class="social-card" href="https://www.linkedin.com/in/isaac-aguilar14/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Edwin Aguilar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"></path></svg><span>LINKEDIN</span><strong>Conectar ↗</strong></a>
+        <a id="instagramContact" class="social-card" href="https://www.instagram.com/zhac_14e/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Edwin Aguilar (@zhac_14e)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r=".7" class="icon-fill"></circle></svg><span>INSTAGRAM</span><strong>@zhac_14e ↗</strong></a>
+        <a class="social-card" href="mailto:isaac.aguilar2t@gmail.com?subject=Contacto%20desde%20portafolio" aria-label="Enviar correo a Edwin Aguilar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg><span>GMAIL</span><strong>Enviar mensaje ↗</strong></a>
+      </div>
+    </section>
+  </main>
+
+  <section class="closing-quote page-section" aria-label="Frase final">
+    <p>«Cada gran solución comienza con una pregunta, una idea y las ganas de aprender algo nuevo.»</p>
+  </section>
+  <footer class="footer"><a class="logo" href="#home">Edwin Aguilar<i></i></a><p>Construido con curiosidad y código.</p><a class="footer-instagram" href="https://www.instagram.com/zhac_14e/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Edwin Aguilar (@zhac_14e)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r=".7"></circle></svg><span>@zhac_14e</span></a><span>© <span id="currentYear"></span> EDWIN AGUILAR</span></footer>
+
+  <div class="modal-overlay" id="projectModal" aria-hidden="true">
+    <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Cerrar ventana">×</button>
+      <span class="modal-kicker" id="modalCategory">PROJECT / INFO</span>
+      <h2 id="modalTitle">Project title</h2>
+      <p class="modal-description" id="modalDescription"></p>
+      <div class="modal-contribution"><span id="modalFocusLabel">PROJECT FOCUS</span><p id="modalContribution"></p></div>
+      <div class="modal-tech-wrap"><span id="modalHighlightsLabel">PROJECT HIGHLIGHTS</span><div class="modal-technologies" id="modalTechnologies"></div></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+</body>
+</html>
