@@ -1,7 +1,7 @@
 const projects = {
   parking: {
     title: "Parking-SV",
-    website: "https://parkingsv.vercel.app/#problematica",
+    website: "https://parkingsv.vercel.app/",
     repository: "https://github.com/parkingSV26/parkingsv-web"
   },
   voxvision: {
